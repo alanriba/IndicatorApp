@@ -1,10 +1,16 @@
+import {StackScreenProps} from '@react-navigation/stack';
 import * as React from 'react';
-import {Image, Text} from 'react-native';
-import {List} from 'react-native-paper';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import {FlatList, Image, Text} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {styles} from '../assets/theme/appTheme';
+import {ListComponent} from '../components/ListItemComponent';
+import {UseIndicator} from '../core/hooks/UseIndicator';
 
 export const HomeScreen = () => {
+  const {top} = useSafeAreaInsets();
+
+  const {indicators} = UseIndicator();
+
   return (
     <>
       <Image
@@ -12,25 +18,22 @@ export const HomeScreen = () => {
         style={styles.iconBackgorund}
       />
 
-      <Text style={{...styles.title, marginLeft: 20}}>
+      <Text
+        style={{
+          ...styles.title,
+          top: top + 20,
+          alignItems: 'center',
+          marginBottom: 30,
+        }}>
         Indicadores Económicos
       </Text>
 
-      <List.Item
-        title="First Item"
-        description="Item description"
-        left={() => <Ionicons name="star-outline" color={'red'} />}
-        right={() => (
-          <Ionicons name="information-circle-outline" color={'red'} />
-        )}
-      />
-      <List.Item
-        title="First Item"
-        description="Item description"
-        left={() => <Ionicons name="star-outline" color={'red'} />}
-        right={() => (
-          <Ionicons name="information-circle-outline" color={'red'} />
-        )}
+      <FlatList
+        data={indicators}
+        showsVerticalScrollIndicator={false}
+        numColumns={1}
+        keyExtractor={key => key.codigo}
+        renderItem={({item}) => <ListComponent itemIndicator={item} />}
       />
     </>
   );
