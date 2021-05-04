@@ -1,4 +1,4 @@
-# CONSULTA SERVICIOS DE INDICADORES htt://mindicadores.cl
+# CONSULTA SERVICIOS DE INDICADORES http://mindicadores.cl
 
 Proyecto en ReactNative para la consulta de indicadores económicos.
 
@@ -83,10 +83,6 @@ TODO
 Desarrollado con TypeScript
 
 https://www.typescriptlang.org/docs/handbook/react.html
-
-```
-Da un ejemplo
-```
 
 ## Despliegue 📦
 
