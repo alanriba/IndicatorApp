@@ -6,7 +6,6 @@ Proyecto en ReactNative para la consulta de indicadores económicos.
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
 
 
 ### Pre-requisitos 📋
@@ -81,7 +80,9 @@ TODO
 
 ### Y las pruebas de estilo de codificación ⌨️
 
-_Explica que verifican estas pruebas y por qué_
+Desarrollado con TypeScript
+
+https://www.typescriptlang.org/docs/handbook/react.html
 
 ```
 Da un ejemplo
