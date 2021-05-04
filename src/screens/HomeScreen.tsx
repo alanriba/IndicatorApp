@@ -1,4 +1,3 @@
-import {StackScreenProps} from '@react-navigation/stack';
 import * as React from 'react';
 import {FlatList, Image, Text} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -22,8 +21,6 @@ export const HomeScreen = () => {
         style={{
           ...styles.title,
           top: top + 20,
-          alignItems: 'center',
-          marginBottom: 30,
         }}>
         Indicadores Económicos
       </Text>

@@ -14,12 +14,15 @@ export const ListComponent = ({itemIndicator}: Props) => {
 
   return (
     <TouchableOpacity
-      activeOpacity={0.9}
+      activeOpacity={0.2}
       onPress={() =>
-        navigation.navigate('DetailsListScreen', {codeId: itemIndicator.codigo})
+        navigation.navigate('DetailsListScreen', {
+          codeId: itemIndicator.codigo,
+          itemName: itemIndicator.nombre,
+        })
       }>
       <List.Item
-        title={itemIndicator.codigo}
+        title={itemIndicator.nombre}
         description={itemIndicator.unidad_medida}
         left={() => <Ionicons name="analytics" size={42} />}
         right={() => <Ionicons name="information-circle-outline" size={42} />}

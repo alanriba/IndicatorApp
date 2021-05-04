@@ -7,7 +7,7 @@ import {DetailsListScreen} from '../screens/DetailsListScreen';
 
 export type RootStackParams = {
   HomeScreen: undefined;
-  DetailsListScreen: {codeId: string};
+  DetailsListScreen: {codeId: string; itemName: string};
   DetailsIndicatorScreen: {indicator: IndicatorObject};
 };
 const Stack = createStackNavigator<RootStackParams>();
