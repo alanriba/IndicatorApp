@@ -1,14 +1,13 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreen} from '../screens/HomeScreen';
-import {IndicatorObject} from '../core/interfaces/IndicatorInterfaces';
-import {DetailsIndicatorScreen} from '../screens/DetailsIndicatorScreen';
+
 import {DetailsListScreen} from '../screens/DetailsListScreen';
+import {DetailsIndicatorScreen} from '../screens/DetailsIndicatorScreen';
 
 export type RootStackParams = {
   HomeScreen: undefined;
-  DetailsListScreen: {codeId: string; itemName: string};
-  DetailsIndicatorScreen: {indicator: IndicatorObject};
+  DetailsListScreen: {codeId: string; itemName: string}
 };
 const Stack = createStackNavigator<RootStackParams>();
 

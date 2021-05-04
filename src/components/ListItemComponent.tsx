@@ -13,19 +13,33 @@ export const ListComponent = ({itemIndicator}: Props) => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={() =>
-        navigation.navigate('DetailsListScreen', {
-          codeId: itemIndicator.codigo,
-          itemName: itemIndicator.nombre,
-        })
-      }>
+    <TouchableOpacity activeOpacity={0.2}>
       <List.Item
         title={itemIndicator.nombre}
         description={itemIndicator.unidad_medida}
-        left={() => <Ionicons name="analytics" size={42} />}
-        right={() => <Ionicons name="information-circle-outline" size={42} />}
+        left={() => (
+          <Ionicons
+            name="analytics"
+            size={42}
+            onPress={() =>
+              navigation.navigate('DetailsListScreen', {
+                codeId: itemIndicator.codigo,
+                itemName: itemIndicator.nombre,
+              })
+            }
+          />
+        )}
+        right={() => (
+          <Ionicons
+            name="information-circle-outline"
+            size={42}
+            onPress={() =>
+              navigation.navigate('DetailsIndicatorScreen', {
+                indicator: itemIndicator,
+              })
+            }
+          />
+        )}
       />
     </TouchableOpacity>
   );

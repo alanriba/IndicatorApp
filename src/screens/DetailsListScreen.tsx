@@ -1,5 +1,6 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import * as React from 'react';
+import {View} from 'react-native';
 import {Image, FlatList} from 'react-native';
 import {Text} from 'react-native-paper';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -16,7 +17,7 @@ export const DetailsListScreen = ({route}: Props) => {
   const {codeId, itemName} = route.params;
   const {indicators} = UseIndicatorType(codeId);
   return (
-    <>
+    <View style={{flex: 1}}>
       <Image
         source={require('../assets/img/finantial.png')}
         style={styles.iconBackgorund}
@@ -31,6 +32,6 @@ export const DetailsListScreen = ({route}: Props) => {
         keyExtractor={key => key.fecha}
         renderItem={({item}) => <ListValueComponent itemIndicator={item} />}
       />
-    </>
+    </View>
   );
 };
